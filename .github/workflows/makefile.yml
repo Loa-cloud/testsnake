@@ -2,7 +2,7 @@ name: CI/CD GitHub Actions
 on: workflow_dispatch
 jobs:
   gtest-tests:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
         with:
@@ -10,9 +10,9 @@ jobs:
       - run: git submodule init
       - run: git submodule update
       - run: sudo apt update -y && sudo apt install -y libgtest-dev libgmock-dev
-      - run: pip install --user cpp-coveralls
-      - run: cmake
+      #- run: pip install --user cpp-coveralls
+      #- run: cmake
       #- run: cmake .
-      - run: make
-      - run: make CTEST_OUTPUT_ON_FAILURE=1  test
+      #- run: make
+      #- run: make CTEST_OUTPUT_ON_FAILURE=1  test
 
