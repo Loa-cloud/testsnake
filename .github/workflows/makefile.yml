@@ -11,7 +11,8 @@ jobs:
       - run: git submodule update
       - run: sudo apt update -y && sudo apt install -y libgtest-dev libgmock-dev
       - run: pip install --user cpp-coveralls
-      - run: cmake .
+      - run: cmake
+      #- run: cmake .
       - run: make
       - run: make CTEST_OUTPUT_ON_FAILURE=1  test
 
